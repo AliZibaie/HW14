@@ -1,0 +1,33 @@
+INSERT INTO branches(name, city) 
+VALUES('branch1', 'tehran'),
+('branch2', 'shiraz'),
+('branch3', 'mashhad'),
+('branch4', 'abadan'),
+('branch5', 'isfahan');
+
+INSERT INTO departments(name, duty, branch_id) 
+VALUES('department1', 'duty1', 1),
+('department2', 'duty2', 1),
+('department3', 'duty3', 2),
+('department4', 'duty4', 3),
+('department5', 'duty5' ,3),
+('department6', 'duty6' ,4),
+('department7', 'duty7' ,4),
+('department8', 'duty8' ,5),
+('department9', 'duty9' ,5),
+('department10', 'duty10' ,5)
+
+INSERT INTO employees(name, age, salary, department_id) 
+VALUES('Ali', 21, 1200, 1),
+('Ali2', 22, 2400, 1),
+('Ali3', 23, 1500, 2),
+('Ali4', 24, 3600, 2),
+('Ali5', 25, 4800, 2),
+('Ali6', 26, 5200, 3),
+('Ali7', 27, 500, 3),
+('Ali8', 28, 200, 3),
+('Ali9', 29, 10000, 4),
+('Ali10', 30, 1200, 5),
+('Ali11', 31, 5500, 4),
+('Ali12', 32, 4800, 5)
+;

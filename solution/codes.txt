@@ -1,0 +1,52 @@
+1 :
+SELECT name, salary FROM employees e WHERE e.salary < 1000;
+
+2 :
+SELECT e.name as Ename, d.Name as Dname, d.id, e.department_id FROM employees e
+INNER JOIN departments d ON e.department_id=d.id;
+
+3 :
+SELECT AVG(e.salary) as average, d.Name as Dname FROM employees e
+INNER JOIN departments d ON e.department_id=d.id
+GROUP BY D.Name;
+
+4:
+SELECT d.Name as Dname FROM departments d 
+INNER JOIN branches b ON d.branch_id=b.id
+WHERE b.city = 'Isfahan';
+
+5:
+SELECT b.city as branch_name , COUNT(d.Name) as number FROM departments d 
+INNER JOIN branches b ON d.branch_id=b.id
+GROUP BY b.name;
+
+6:
+SELECT e.Name as Ename, b.city as Bname FROM employees e
+INNER JOIN departments d ON e.department_id=d.id
+INNER JOIN branches b ON d.branch_id=b.id;
+
+7:
+SELECT AVG(e.salary) as average, SUM(e.salary) as sum, COUNT(e.salary) as number FROM employees e
+INNER JOIN departments d ON e.department_id=d.id
+INNER JOIN branches b ON d.branch_id=b.id
+WHERE b.city = 'tehran';
+
+8:
+SELECT COUNT(e.Name) as number, b.city as Bname FROM employees e
+INNER JOIN departments d ON e.department_id=d.id
+INNER JOIN branches b ON d.branch_id=b.id
+GROUP BY b.name;
+
+9:
+SELECT d.Name as Dname, COUNT(e.id) as number FROM employees e
+RIGHT JOIN departments d ON e.department_id=d.id
+INNER JOIN branches b ON b.id = d.branch_id 
+WHERE b.city = 'isfahan'
+GROUP BY d.name;
+
+10:
+SELECT b.name as Bname, COUNT(e.id) as number FROM employees e
+RIGHT JOIN departments d ON e.department_id=d.id
+INNER JOIN branches b ON b.id = d.branch_id 
+GROUP BY Bname
+HAVING number < 10 ;
